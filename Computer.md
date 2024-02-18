@@ -34,7 +34,7 @@ Der universelle Rechner basierte auf einem Schaltungskonzept mit folgenden Kompo
 
 Dabei bilden das Rechen- und Steuerwerk den CPU.
 
-![[assets/von_neumann_architektur.png]]
+![[modules/module_epi/other/epi-zusammenfassung/assets/von_neumann_architektur.png]]
 
 Ein Programm für einen Solchen Rechner besteht dann immer aus einer Sammlung an Befehlsworte. Diese Bestehen immer aus einer Fixen Anzahl aus Bits. Wobei die ersten n Bits die Operation beschreiben. Zum Beispiel "Addiere". Diesen Teil nennt man Opcode. Es folgen dann 2 oder 3 je m große Bitvektoren die die Operanden für die Operation beschreiben.
 
