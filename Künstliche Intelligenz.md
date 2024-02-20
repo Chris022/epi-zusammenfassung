@@ -1,4 +1,4 @@
-**Starke KI**: Hat um Ziel eine künstliche Intelligenz zu erschaffen, die wie der Mensch kreativ nachdenken und Probleme lösen kann und sich durch ein Bewusstsein bzw. Emotionen auszeichnet.
+**Starke KI**: Hat zum Ziel eine künstliche Intelligenz zu erschaffen, die wie der Mensch kreativ nachdenken und Probleme lösen kann und sich durch ein Bewusstsein bzw. Emotionen auszeichnet.
 
 **Turing-Test**: Ein Mensch stellt einer KI Fragen und kann nicht unterscheiden ob es sich um einen Menschen oder eine Roboter handelt. Soll ein Kriterium sein, wann eine Maschine eine dem Menschen gleichwertige Intelligenz simuliert. Aussagekraft?
 
@@ -10,7 +10,7 @@
 - Clustering: Ähnlich zur Klassifikation aber mit (unsupervised Learning), Sportler in Cluster einteilen, Netflix Film Vorschläge, Spam-filter, ....
 - Strategie-Entscheidung
 
-**Maschine Learning - Trainingsmethode**:
+**Maschine Learning - Trainingsmethoden**:
 - unsupervised: anhand von vorgegebenen Regeln - Clustering
 - supervised: mit gelabelten Daten - Regression, Klassifikation, 
 - reinforcement: über Belohnungen
@@ -23,7 +23,7 @@ Dieser Algorithmus ist ein unsupervised clustering Algorithmus, der Daten in gen
 **Cluster-Varianz/Zielfunktion**: Als Cluster-Varianz ($J$) bezeichnet man die Summe aller Abstände der Datenpunkte zu dem Mittelpunkt des ihnen zugeordneten Clusters. Die Abstände zweier Vektoren wird durch die quadratische Euklidische Distanz berechnet. Es ergibt sich also 
 $$J = \sum_{k=1}^K\sum_{n=1}^Nr_{n,k}\cdot ||x_{n}-\mu_{k}||^2$$
 
-**Algorithmus**: Sei $k \in \mathbb{N}$ die Anzahl der Cluster und $X$ eine Menge mit $N$, $d$-dimensionalen Vektoren, die die einzelnen Datenpunkte darstellen. Sein außerdem $\mu_{i}$ mit $i \in \{ 1,\dots,K \}$ die Cluster-Mittelpunkte - also $d$-dimensionale Vektoren. So besteht der Algorithmus aus 3 Schritten:
+**Algorithmus**: Der Algorithmus besteht aus 3 Schritten:
 1) *Initialisierung der Mittelpunkte*: Heißt wir weißen den Werten $\mu_{k}$ für $k \in \{ 1,\dots,K \}$ je zufällige Vektoren aus $\mathbb{R}^d$ zu.
 2) *Zuordnung/Erwartungsschritt*: Jeder Datenpunkt wird nun demjenigen Cluster zugeordnet, bei dem die Cluster-Varianz am wenigsten erhöht wird. Also: "Jeder Datenpunkt wir dem Cluster zugeordnet dessen Mittelpunkt am nähsten an dem Datenpunkt ist.".
 3) *Aktualisierung/Maximierungsschritt*: Berechne die Mittelpunkte der Cluster neu. Such also für jedes $\mu_{k}$ einen Wert, sodass $J$ minimal wird. Also leiten wir $J$ für jedes $\mu_{i}$ ab, setzen 0 und formen um. So bekommen wir raus, dass die neuen Cluster-Mittelpunkte einfach der Schwerpunkt der zu dem Cluster gehörenden Datenpunkte ist.
@@ -34,10 +34,10 @@ J_{k} = \sum_{n=1}^Nr_{n,k}\cdot ||x_{n}-\mu_{k}||^2 \\
 \end{align}$$
 4) Wiederhole `2`, `3` beliebig oft.
 
-**Konvergenz und Minimum**: Da die Schritte `2` und `3` die Zielfunktion immer verkleinern konvergiert der Algorithmus sicher, allerdings erreicht er evl. nur lokale Minima.
+**Konvergenz und Minimum**: Da die Schritte `2` und `3` die Zielfunktion immer verkleinern konvergiert der Algorithmus sicher, allerdings erreicht er evl. nur ein lokales Minimum.
 
 ## Lineare Regression
-Dieser Algorithmus ist ein Supervised regressions Algorithmus. Dabei wir eine abhängige Variable $y$ durch eine oder mehrere unabhängige Variablen(=Features) $X$ dargestellt. 
+Dieser Algorithmus ist ein Supervised regressions Algorithmus. Dabei wird eine abhängige Variable $y$ durch eine oder mehrere unabhängige Variablen(=Features) $X$ dargestellt. 
 
 **Definitionen**: Sei $m \in \mathbb{N}$ die Anzahl der Trainings-Daten und $n \in \mathbb{N}$ die Anzahl der Features. Sei $X \in \mathbb{R}^{m \times n}$ eine Matrix die alle Trainings-Daten enthält, wobei je ein $n$-dimensionaler Daten-Punkt eine Zeile ist. Sei außerdem $\hat{y}$ ein Vektor, der die Vorhersage des Models für jede der Trainings-Daten enthält. Sein $w \in \mathbb{R}^n$ dann noch die Gewichte, also ein Wert für jedes Feature und $b \in \mathbb{R}$ der Bias.
 
@@ -54,7 +54,7 @@ Konkret funktioniert der Algorithmus also nun nach den folgenden Schritten:
 1) Zufällige Zuweisung von Werten für $w$ und $b$.
 2) Berechnen aller Vorhersagen des Modells. 
 3) Optimierungsschritt: Minimierung der Zielfunktion durch Gradienten-abstieg. Also updaten der Gewichte und des Bias mit 
-$$w_{j} \to w_{j} - \alpha \frac{\delta J}{\delta w_{j}}; \quad \frac{\delta J}{\delta w_{j}}=2\frac{1}{m}\sum_{i=0}^mx_{i,j}\cdot(\hat{y_{i}}-y_{i})$$
-$$b \to b- \alpha \frac{\delta J}{\delta b}, \quad \frac{\delta J}{\delta b}=2 \frac{1}{m}\sum_{i=0}^m(\hat{y_{i}}-y_{i})$$
+$$w_{j} \to w_{j} - \alpha \frac{\delta J}{\delta w_{j}}; \quad \frac{\delta J}{\delta w_{j}}=2\frac{1}{m}\sum_{i=1}^mx_{i,j}\cdot(\hat{y_{i}}-y_{i})$$
+$$b \to b- \alpha \frac{\delta J}{\delta b}, \quad \frac{\delta J}{\delta b}=2 \frac{1}{m}\sum_{i=1}^m(\hat{y_{i}}-y_{i})$$
 
 **Lineare Regression als Neuronales Netz**: Hinzufügen einer Stepfunktion wodurch ein Perzeptron entsteht. Dann durch kombination von mehreren Perzeptronen - Neuronales Netz.![[Pasted image 20240218160131.png]]

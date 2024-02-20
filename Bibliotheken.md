@@ -35,7 +35,7 @@ Deshalb: Immer mit angeben:
 - `tk.Label(master, option, ...)` Erzeugt einen Text. Wobei master das Fenster und option z.B. `text="blabla"` sein kann.
 - `tk.Frame(parent, option, ...)`  Ist ein Container für andere Widgets und erlaubt Layout-Manager zu Schachteln. Optionen können sein `width, height, reflief='ridge'`
 - `tk.Buttom(parent, option, ...)` Ist ein Knopf. Übliche options sind `text, command`
-- `tk.Entry-Widget(parent)` Ermöglicht es Text einzugeben. Mittels `my_entry.get()` kann man den Text einlesen, mittels `my_entry.delete(0,tk.END)` kann es geleert werden und mit `my_entry.insert(0,"bla")` kann text eingefügt werden.
+- `tk.Entry(parent)` Ermöglicht es Text einzugeben. Mittels `my_entry.get()` kann man den Text einlesen, mittels `my_entry.delete(0,tk.END)` kann es geleert werden und mit `my_entry.insert(0,"bla")` kann text eingefügt werden.
 - `tk.Radiobutton(root, text, padx, variable, command, value)` Ist ein RadioButton wobei die variable eine Steuervariable des selben Datentyp wie value sein muss.
 Außerdem gibt es die folgenden Layout-Manager, wobei pro Fenster nur einer genutzt werden kann:
 - `my_widget.pack()` bestimmt Position, Größe etc. automatisch. 

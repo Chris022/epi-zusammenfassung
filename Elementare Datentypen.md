@@ -14,7 +14,7 @@ Heutzutage sind beide Technologien im Einsatz. Beim Austausch von Daten im Inter
 - Erste Ziffer als Vorzeichen interpretieren. Also $0\dots$ positiv, $1\dots$ negativ. Problem: Es gibt eine positive und negative 0. Außerdem ist die Arithmetik kompliziert
 - Einerkomplement: Für eine negative Zahl wird jedes Bit der entsprechenden positiven Zahl invertiert, also $-3_{10}=1100_{(2)}$.  Also wie viele Bit die Zahl haben soll. Problem: Es gibt eine positive und negative 0. Außerdem ist die Arithmetik kompliziert
 - Zweierkomplement: Für eine negative Zahl wird jedes Bit der entsprechenden positiven Zahl invertiert, also $-3_{10}=1100_{(2)}$, dann eins zu der Zahl addiert. Also wie viele Bit die Zahl haben soll. Damit kann man dann wie gewohnt addieren. Man kann dabei eine Negative Zahl mehr als Positive speichern, also ist der Wertebereich von $-2^{n-1} \text{ bis } 2^{n-1}-1$ darstellbar.
-- Excess-x-Code: Hierbei wählt man einen Bias $B$. Der Wert einer Zahl $e$ ergibt sich aus der nicht negativen Binärzahl $E$ durch Subtraktion eines festen Biaswertes $B$, also $e=E-B$. Wobei $E$ hier die zu speichernde Zahl ist. $B$ ist bei $n$ Bit meist $2^{n-1}$, also $100\dots_{(2)}$.
+- Excess-x-Code: Hierbei wählt man einen Bias $B$. Der Wert einer Zahl $e$ ergibt sich aus der nicht negativen Binärzahl $E$ durch Subtraktion eines festen Biaswertes $B$, also $e=E-B$. Wobei $E$ hier die zu speichernde Zahl ist. $B$ ist bei $n$ Bit meist $2^{n-1}-1$, also $011\dots_{(2)}$.
 
 **Python - Syntax**:
 - Dezimalzahlen wie erwartet z.B. `100, 143, 0, -3`
@@ -100,7 +100,7 @@ In Gleitkommadarstellung Codieren:
 - Schritt 7: Anteile wie folgt anordnen: $SEM$
 Von Gleitkommadarstellung Codieren:
 - Schritt 1: Vorzeichen des Ergebnisses bestimmen
-- Schritt 2: E ablesen und durch rechnen von $e=E-B$ den wahren Wert des Exponenten bestimmen## Gleitpunktzahlen
+- Schritt 2: E ablesen und durch rechnen von $e=E-B$ den wahren Wert des Exponenten bestimmen
 - Schritt 3: Die Mantisse durch hinzufügen von 1 zu M bestimmen
 - Schritt 4: Das Komma in der Mantisse um e Stellen nach Rechts verschieben um die Zahl zu erhalten
 - Schritt 5: Vorzeichen mit Zahl kombinieren.
@@ -124,7 +124,7 @@ Besonderheiten sind nun:
 - mittels math.isfinite(...) kann man auf endlichkeit prüfen
 - Arithmetische Operationen mit infinity geben +/-infinity oder NaN
 - Arithmetische Operationen mit NaN geben NaN
-- NaN ist NIE gleich zu irgendetwas, nicht einmal zu sich selbst#
+- NaN ist NIE gleich zu irgendetwas, nicht einmal zu sich selbst
 - +/-infinity ist nur sich selbst ähnlich.
 - will man auf NaN prüfen so gibt es die Funktion math.isnan(...)
 
@@ -187,4 +187,4 @@ Im zweiten Schritt werden die Unicode-Zeichen dann mittels eines sogenannten Uni
 - `ord(c)` liefert den Unicode code point des Zeichens c
 - ...
 
-**Python - Byte**: Ein Byte Objekt ist ein codierter String. Mittels `"abc".encode(): String -> Byte` und `b"abc".decode: Byte -> String` kann man zwischen Strings und Bytes hin und her wandeln. Beide Methoden akzeptieren eine Codierung z.B.: "utf-8". 
+**Python - Byte**: Ein Byte Objekt ist ein codierter String. Mittels `"abc".encode(): String -> Byte` und `b"abc".decode(): Byte -> String` kann man zwischen Strings und Bytes hin und her wandeln. Beide Methoden akzeptieren eine Codierung z.B.: "utf-8". 

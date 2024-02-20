@@ -62,8 +62,8 @@ Die Ergebnisse einer Anwendungsfallmodellierung sollen sein:
 **Klasse**: Dargestellt als Rechteck. Besteht aus einem Namen, Attribute und Operationen. ![[Pasted image 20240218115458.png]]
 **Attribute und Operationen**: 
 Sichtbarkeit:
-- + .... public
-- - .... private
+- \+ .... public
+- \- .... private
 - \# .... protected
 - $\sim$ .... package: Zugriff durch Objekte deren Klasse sich im selben Paket befinden, erlaubt
 - unterstrichen: Klassenattribute/Operationen
@@ -74,9 +74,9 @@ Eigenschaften: Bei Attributen kann man nach dem default Wert noch Eigenschaften 
 
 **Objektbeziehungen**:
 - *Vererbung*: Dargestellt mit einem offenen Dreieck. Beschreibt eine Generalisierung. Also die Klasse ohne Pfeilspitze "ist eine" Klasse mit Pfeilspitze. Man unterscheidet und schreibt die jeweilige Eigenschaft in geschweiften Klammern neben den Strich:
-	- incomplete oder complete: Bei complete kann man die Superklasse alleine nicht initialisieren. Also eine Person ist weder Angestellter noch Student.
-	- overlapping oder disjoint: Bei overlapping kann ein Objekt Instanz von mehr als einer Subklasse sein. Also eine Person ist Angestellter UND Student.
-- *Assoziation*: Einfache Linie. Beschreibt eine einfache Beziehung. Welche Beziehung, kann als Name angegeben werden.
+	- incomplete oder complete: Bei incomplete kann es Objekte der Oberklasse geben, Instanz keiner Unterklasse sind! Also eine Person ist weder Angestellter noch Student.
+	- overlapping oder disjoint: Bei overlapping kann ein Objekt der Superklasse gleichzeitig Instanz von mehr als einer Subklasse sein. Also eine Person kann ein Angestellter UND Student sein.
+- *Assoziation*: Einfache Linie. Beschreibt eine einfache Beziehung. Welche BeYziehung, kann als Name angegeben werden.
 - *Gerichtete Assoziation*: Einfacher Pfeil mit Kreuz an am anderen Ende oder einfach zwei Pfeile. Dabei heißt dass die Klasse mit der Pfeilspitze nicht zu Objekten der Klasse mit dem X navigieren kann. Umgekehrt allerdings schon.
 - *Aggregation*: Linie mit offener Raute am Ende. Beschreibt, dass die Klasse mit der Raute (=das Ganze) aus Teilen der Klasse ohne Raute besteht. Also eine "ist teil" Beziehung. Wichtig: Die Teile können dabei auch ohne dem Ganzen bestehen.
 - *Komposition*: Linie mit geschlossener Raute am Ende. Ist wie die Aggregation, jedoch können Objekte der Klasse ohne Raute nicht ohne einem Objekte der Klasse mit Raute existieren. Insbesondere kann also ein Teil immer nur in einem Ganzen eingebaut sein!

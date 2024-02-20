@@ -44,7 +44,7 @@ x = copy.deepcopy(el) # deep copy
 - Immutable: `set_1 | set_2` = `set_1.union(set_2)`: Vereinigung.
 - Immutable: `set_1 ^ set_2` = `set_1.symmetric_difference(set_2)`: Symmetrische Differenz.
 - Immutable: `set_1 - set_2` = `set_1.difference(set_2)`: Differenz.
-- Immutable: `set_1 - set_2` = `set_1.isdisjoint(set_2)`: Prüft auf Disjunkt.
+- Immutable: `set_1.isdisjoint(set_2)`: Prüft auf Disjunkt.
 - Immutable: `set_1 <= set_2` = `set_1.issubset(set_2)`: Prüft ob set_1 in set_2 ist.
 - Immutable: `set_1 >= set_2` = `set_1.issuperset(set_2)`: Testet ob set_2 in set_1 ist.
 - Mutable: `set_1.add()`: Fügt ein Element hinzu.
